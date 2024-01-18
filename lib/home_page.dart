@@ -2,6 +2,7 @@ import 'package:assignment_whats_app_screen/second_message.dart';
 import 'package:assignment_whats_app_screen/send_message.dart';
 import 'package:flutter/material.dart';
 
+import 'app_bar.dart';
 import 'first_message.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: const MyAppBar(),
       body: Container(
         height: height,
         width: width,
@@ -26,22 +27,20 @@ class _MyHomePageState extends State<MyHomePage> {
           image: AssetImage("assets/background.png"),
           fit: BoxFit.cover,
         )),
-        child: Stack(
+        child: const Stack(
           children: [
-            Positioned.fill(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 30.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 30.0),
-                      child: FirstMessage(),
-                    ),
-                    SecondMessage(),
-                  ],
-                ),
+            Padding(
+              padding: EdgeInsets.only(top: 30.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 30.0),
+                    child: FirstMessage(),
+                  ),
+                  SecondMessage(),
+                ],
               ),
             ),
             Align(
